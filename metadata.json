@@ -1,0 +1,6 @@
+{
+  "name": "EduTech Conditionals: Zero & First Conditional Master",
+  "description": "Master Zero and First Conditionals in English through Educational Technology contexts with interactive lessons, gamified matching games, quizzes, and score tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

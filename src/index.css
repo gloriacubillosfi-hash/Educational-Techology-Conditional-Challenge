@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes softGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 24px rgba(129, 140, 248, 0.65));
+  }
+}
+
+.animate-title-motion {
+  display: inline-block;
+  animation: titleFloat 4s ease-in-out infinite, softGlow 4s ease-in-out infinite;
+}
+
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradientMove 3.5s linear infinite;
+}
+
+@keyframes letterCascade {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    color: #f8fafc;
+    text-shadow: none;
+  }
+  20% {
+    transform: translateY(-8px) scale(1.08);
+    color: #38bdf8;
+    text-shadow: 0 0 14px rgba(56, 189, 248, 0.85);
+  }
+  40% {
+    transform: translateY(0px) scale(1);
+    color: #e2e8f0;
+    text-shadow: none;
+  }
+}
+
+.letter-cascade {
+  display: inline-block;
+  animation: letterCascade 2.5s ease-in-out infinite;
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+@keyframes flipIn {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) rotateX(-50deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-2px) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px) rotateX(0deg);
+  }
+}
+
+.animate-rotate-phrase {
+  display: inline-block;
+  perspective: 1000px;
+  animation: flipIn 0.65s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 12s linear infinite;
+}
+
+@media print {
+  body {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .printable-certificate {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    page-break-inside: avoid !important;
+  }
+}
